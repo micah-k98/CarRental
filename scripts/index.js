@@ -9,12 +9,18 @@
 
 window.onload = function()
 {
-    const estimateButton = document.getElementById("estimateButton");
-    estimateButton.onclick = estimateButtonClicked;
+    // const estimateButton = document.getElementById("estimateButton");
+    // estimateButton.onclick = estimateButtonClicked;
+
+    //to prevent the form from being submitted and reloading the page, use onsubmit event and add the event.preventDefault()
+    const theForm = document.getElementById("theForm");
+    theForm.onsubmit = estimateButtonClicked;
+
 }
 
-function estimateButtonClicked()
+function estimateButtonClicked(event)
 {
+    event.preventDefault(); //add this when .onsubmit event was done
     const rental = {};
 
     //input

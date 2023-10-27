@@ -35,8 +35,8 @@ function estimateButtonClicked()
     rental.under25SurchargeCost = 0;
     if (under25.checked) rental.under25SurchargeCost = rental.carRentalCost * .30; //30% surcharged based on the instructions
 
-
-    
+    //total cost
+    rental.totalCost = +(rental.carRentalCost + rental.optionsCost + rental.under25SurchargeCost).toFixed(2);
 
     
 
@@ -53,4 +53,5 @@ function displayOutput(rental)
     document.getElementById("carRentalCost").innerText = rental.carRentalCost;
     document.getElementById("optionsCost").innerText = (rental.optionsCost).toFixed(2);
     document.getElementById("under25SurchargeCost").innerText = (rental.under25SurchargeCost).toFixed(2);
+    document.getElementById("totalCost").innerText = rental.totalCost;
 }
